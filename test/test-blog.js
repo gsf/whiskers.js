@@ -1,7 +1,7 @@
 var fs = require('fs');
-var selleck = require('./selleck');
+var selleck = require('../lib/selleck');
 
-var template = fs.readFileSync('blog.html', 'utf8');
+var template = fs.readFileSync('test/blog.html', 'utf8');
 
 var context = {
   blog: {
