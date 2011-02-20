@@ -1,0 +1,21 @@
+<h1>{blog.title}</h1>
+{if posts}
+  <section id="posts">
+  {for post in posts}
+    <article>
+      <header>
+        <h1>{post.title|safe}</h1>
+        <p class="by">{post.author}</p>
+      </header>
+      <div>{post.content|markdown}</div>
+    </article>
+    {for comment in post.comments}
+      {>comment}
+    {^for}
+    <p>No comments have yet been made.</p>
+    {/for}
+  {/for}
+  </section>
+{^if}
+  <p>No posts!</p>
+{/if}

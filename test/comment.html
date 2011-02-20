@@ -1,0 +1,7 @@
+    <section class="comment">
+      <header>
+        <h1>A comment on {post.title|safe}, written by {post.author}</h1>
+        <p class="by">{comment.author}</p>
+      </header>
+      <div>{comment.content|markdown}</div>
+    </section>

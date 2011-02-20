@@ -1,0 +1,10 @@
+Selleck is yet another mustachioed templating library.  Selleck.js
+is the JavaScript version.
+
+For now, see the test directory for usage.
+
+Selleck is influenced by these fine projects:
+http://github.com/janl/mustache.js
+http://github.com/akdubya/dustjs
+http://github.com/andychu/json-template
+http://docs.djangoproject.com/en/dev/ref/templates/
