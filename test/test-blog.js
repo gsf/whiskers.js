@@ -34,7 +34,7 @@ var context = {
 var partials = {};
 
 //var compiled = selleck.compile(template);
-//console.log(eval(compiled));
+//console.log(compiled);
 
 var rendered = selleck.render(template, context, partials);
 console.log(rendered);
