@@ -33,8 +33,8 @@ var context = {
 
 var partials = {};
 
-var compiled = selleck.compile(template);
-console.log(eval(compiled(context)));
+//var compiled = selleck.compile(template);
+//console.log(eval(compiled));
 
-//var rendered = selleck.render(template, context, partials);
-//console.log(rendered);
+var rendered = selleck.render(template, context, partials);
+console.log(rendered);
