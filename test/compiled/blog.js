@@ -13,12 +13,13 @@
           context['comment'] = commentA[commentI];
           buffer += '<section class="comment">\n <header>\n <h1>A comment on '+getValue(context, 'post.title', 'safe')+', written by '+getValue(context, 'post.author')+'</h1>\n <p class="by">'+getValue(context, 'comment.author')+'</p>\n </header>\n <div>'+getValue(context, 'comment.content', 'markdown')+'</div>\n </section>\n';
         }
-        if (!commentA) {
+        if (!getValue(context, 'post.comments')) {
           buffer += '<p>No comments have yet been made.</p>';
         }
       }
       buffer += '</section>\n';
-    } else {
+    } 
+    if (!getValue(context, 'posts')) {
       buffer += '<p>No posts!</p>\n';
     }
     return buffer;

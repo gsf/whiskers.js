@@ -11,11 +11,13 @@
     </article>
     {for comment in post.comments}
       {>comment}
-    {^for}
-    <p>No comments have yet been made.</p>
     {/for}
+    {if not post.comments}
+    <p>No comments have yet been made.</p>
+    {/if}
   {/for}
   </section>
-{^if}
+{/if}
+{if not posts}
   <p>No posts!</p>
 {/if}
