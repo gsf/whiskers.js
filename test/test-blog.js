@@ -9,6 +9,5 @@ var partials = {
 
 //var compiled = selleck.compile(template, partials);
 //console.log(compiled);
-
 var rendered = selleck.render(template, context, partials);
 console.log(rendered);
