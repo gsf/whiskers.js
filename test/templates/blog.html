@@ -12,12 +12,12 @@
   {for comment in post.comments}
     {>comment}
   {/for}
-  {^if post.comments}
+  {if not post.comments}
   <p>No comments have yet been made.</p>
   {/if}
 {/for}
 </section>
 {/if}
-{^if posts}
+{if not posts}
 <p>No posts!</p>
 {/if}
