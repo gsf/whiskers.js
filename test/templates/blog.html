@@ -1,4 +1,5 @@
 <h1>{blog.title}</h1>
+{if posts}<h2>Posts</h2>{/if}
 {if posts}
 <section id="posts">
 {for post in posts}
@@ -7,10 +8,12 @@
       <h1>{post.title}</h1>
       <p class="by">{post.author}</p>
     </header>
+    <p class="tags">{for tag in post.tags}{tag} {/for}</p>
     <div>{post.content}</div>
   </article>
   {for comment in post.comments}
-    {>comment}
+{>comment}
+{>addcomment}
   {/for}
   {if not post.comments}
   <p>No comments have yet been made.</p>
