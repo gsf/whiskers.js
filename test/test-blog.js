@@ -10,7 +10,7 @@ var partials = {
 };
 
 var rendered = selleck.render(template, context, partials);
-// uncomment to update comparisons
+// uncomment to update expected
 //fs.writeFileSync('test/compiled/blog.js', compiled);
 //fs.writeFileSync('test/rendered/blog.html', rendered);
 var renderedExpected = fs.readFileSync('test/rendered/blog.html', 'utf8');
