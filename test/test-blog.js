@@ -1,6 +1,9 @@
-var assert = require('assert');
+var common = require('./common');
+var assert = common.assert;
 var fs = require('fs');
 var selleck = require('../lib/selleck');
+
+common.expected = 1;
 
 var template = fs.readFileSync('test/templates/blog.html', 'utf8');
 var context = require('./contexts/blog').context;
