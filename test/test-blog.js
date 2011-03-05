@@ -1,3 +1,4 @@
+var assert = require('assert');
 var fs = require('fs');
 var selleck = require('../lib/selleck');
 
@@ -9,4 +10,8 @@ var partials = {
 };
 
 var rendered = selleck.render(template, context, partials);
-console.log(rendered);
+// uncomment to update comparisons
+//fs.writeFileSync('test/compiled/blog.js', compiled);
+//fs.writeFileSync('test/rendered/blog.html', rendered);
+var renderedExpected = fs.readFileSync('test/rendered/blog.html', 'utf8');
+assert.equal(rendered, renderedExpected, 'rendered and expected differ');

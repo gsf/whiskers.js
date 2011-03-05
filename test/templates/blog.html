@@ -1,5 +1,4 @@
 <h1>{blog.title}</h1>
-{if posts}<h2>Posts</h2>{/if}
 {if posts}
 <section id="posts">
 {for post in posts}
@@ -13,11 +12,11 @@
   </article>
   {for comment in post.comments}
 {>comment}
-{>addcomment}
   {/for}
   {if not post.comments}
-  <p>No comments have yet been made.</p>
+  <p>No darn comments have yet been made.</p>
   {/if}
+{>addcomment}
 {/for}
 </section>
 {/if}
