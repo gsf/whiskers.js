@@ -1,7 +1,38 @@
 Selleck is yet another mustachioed templating library.  This (selleck.js) 
 is the JavaScript version.
 
-For now, see the test directory for usage.
+Selleck keeps templates simple and readable by limiting you to tags for
+statements ("for" and "if"), variables, and partials.  A "for" tag loops over
+items:
+
+    {for item in items}
+      <p>{item}</p>
+    {/for}
+
+An "if" tag only displays a section of the template for a truthy variable:
+
+    {if variable}
+      <p>{variable}</p>
+    {/if}
+
+As you can see, "for" and "if" tags are closed as we close HTML tags, with a
+leading slash. 
+
+Variable tags may contain no spaces, but may use dot notation:  
+
+    {variable.property}
+
+A partial tag is replaced by a partial sub-template at that spot in the
+template:
+
+    <div>{>partial}</div>
+
+Templates are rendered as follows, where "template" is a string and "context"
+and "partials" are objects:
+
+    var rendered = selleck.render(template, context, partials);
+
+See the test directory for full usage examples.
 
 Selleck is influenced by these fine projects:
 http://github.com/janl/mustache.js
