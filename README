@@ -3,10 +3,10 @@ is the JavaScript version.
 
 Selleck keeps templates simple and readable by limiting you to tags for
 statements ("for" and "if"), variables, and partials.  A "for" tag loops over
-items:
+variables in an array:
 
-    {for item in items}
-      <p>{item}</p>
+    {for variable in array}
+      <p>{variable}</p>
     {/for}
 
 An "if" tag only displays a section of the template for a truthy variable:
@@ -18,9 +18,9 @@ An "if" tag only displays a section of the template for a truthy variable:
 As you can see, "for" and "if" tags are closed as we close HTML tags, with a
 leading slash. 
 
-Variable tags may contain no spaces, but may use dot notation:  
+Variable tags may use dot notation:  
 
-    {variable.property}
+    {object.variable}
 
 A partial tag is replaced by a partial sub-template at that spot in the
 template:
@@ -31,6 +31,10 @@ Templates are rendered as follows, where "template" is a string and "context"
 and "partials" are objects:
 
     var rendered = selleck.render(template, context, partials);
+
+Any tag is escaped from rendering by prepending a backslash:
+
+    \{variable}
 
 See the test directory for full usage examples.
 
