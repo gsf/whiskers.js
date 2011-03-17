@@ -1,9 +1,8 @@
 Selleck is yet another mustachioed templating library.  This (selleck.js) 
 is the JavaScript version.
 
-Selleck keeps templates simple and readable by limiting you to tags for
-statements ("for" and "if"), variables, and partials.  A "for" tag loops over
-variables in an array:
+Selleck keeps templates readable by limiting tags to statements ("for" and
+"if"), variables, and partials.  A "for" tag loops over variables in an array:
 
     {for variable in array}
       <p>{variable}</p>
@@ -15,15 +14,15 @@ An "if" tag only displays a section of the template for a truthy variable:
       <p>{variable}</p>
     {/if}
 
-As you can see, "for" and "if" tags are closed as we close HTML tags, with a
-leading slash. 
+As you can see, "for" and "if" sections are closed by a corresponding tag with
+a leading slash. 
 
 Variable tags may use dot notation:  
 
     {object.variable}
 
-A partial tag is replaced by a partial sub-template at that spot in the
-template:
+A partial tag begins with a greater-than sign.  It is replaced by a
+sub-template at that spot in the template:
 
     <div>{>partial}</div>
 
