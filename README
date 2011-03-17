@@ -18,10 +18,14 @@ Selleck keeps templates readable by limiting tags to statements ("for" and
       <p>{variable}</p>
     {/for}
 
-An "if" tag only displays a section of the template for a truthy variable:
+An "if" tag only displays a section of the template for a truthy variable, or
+the inverse:
 
     {if variable}
       <p>{variable}</p>
+    {/if}
+    {if not variable}
+      <p>No variable!</p>
     {/if}
 
 As you can see, "for" and "if" sections are closed by a corresponding tag with
