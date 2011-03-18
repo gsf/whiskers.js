@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Jquery</title>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script src="../lib/selleck.js"></script>
+
+  <script type="text/javascript" charset="utf-8">
+    $.ajax({
+      url: 'templates/blog.html', 
+      async: false,
+      success: function (data) {
+        var template = data;
+        }
+    });
+    $.ajax({
+      url: 'contexts/blog.json', 
+      async: false,
+      success: function (data) {
+        var context = data;
+      } 
+    });
+    var partials = {};
+    $.ajax({
+      url: 'contexts/blog.json', 
+      async: false,
+      success: function (data) {
+        partials.comment = data;
+      }
+    });
+    $.ajax({
+      url: 'contexts/blog.json', 
+      async: false,
+      success: function (data) {
+        partials.addcomment = data;
+      }
+    });
+
+    $('body').html = selleck.render(template, context, partials);
+
+  </script> 
+
+</head>
+<body>
+</body>
+</html>
