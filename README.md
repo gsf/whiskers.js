@@ -58,7 +58,8 @@ Philosophy
 
 The limits of Selleck's templates (no filters or complex tags) encourage a
 careful and thorough preparation of the context.  The retrieval, manipulation,
-and conversion of data for display is kept separate from the presentation.
+and conversion of data for display is therefore kept separate from the 
+presentation.
 
 Selleck is influenced by these fine projects:
 
