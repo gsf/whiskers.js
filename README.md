@@ -63,7 +63,7 @@ presentation.
 
 Selleck is influenced by these fine projects:
 
-* http://github.com/janl/mustache.js
-* http://github.com/akdubya/dustjs
-* http://github.com/andychu/json-template
-* http://docs.djangoproject.com/en/dev/ref/templates/
+* <http://github.com/janl/mustache.js>
+* <http://github.com/akdubya/dustjs>
+* <http://github.com/andychu/json-template>
+* <http://docs.djangoproject.com/en/dev/ref/templates/>
