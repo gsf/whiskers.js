@@ -1,6 +1,33 @@
 Selleck is yet another mustachioed templating library.  This (selleck.js) 
 is the JavaScript version.
 
+An example template:
+
+    <h1>{blog.title}</h1>
+    {if posts}
+    <section id="posts">
+    {for post in posts}
+      <article>
+        <header>
+          <h1>{post.title}</h1>
+          <p class="by">{post.author}</p>
+        </header>
+        <p class="tags">{for tag in post.tags}{tag} {/for}</p>
+        <div>{post.content}</div>
+      </article>
+      {for comment in post.comments}
+    {>comment}
+      {/for}
+      {if not post.comments}
+      <p>No comments have yet been made.</p>
+      {/if}
+    {>addcomment}
+    {/for}
+    </section>
+    {/if}
+    {if not posts}
+    <p>No posts!</p>
+    {/if}
 
 Installation
 ------------
