@@ -1,1 +1,1 @@
-module.exports = require('./lib/selleck');
+module.exports = require('./lib/whiskers');
