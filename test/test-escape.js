@@ -3,8 +3,7 @@
 var fs = require('fs');
 var common = require('./common');
 var assert = common.assert;
-var selleck = require('../lib/selleck');
-var render = selleck.render;
+var render = common.whiskers.render;
 
 common.expected = 8;
 

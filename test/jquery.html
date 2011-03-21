@@ -5,7 +5,7 @@
   <title>Jquery</title>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-  <script src="../lib/selleck.js"></script>
+  <script src="../lib/whiskers.js"></script>
 
   <script type="text/javascript" charset="utf-8">
     $.ajax({
@@ -38,7 +38,7 @@
       }
     });
 
-    $('body').html = selleck.render(template, context, partials);
+    $('body').html = whiskers.render(template, context, partials);
 
   </script> 
 

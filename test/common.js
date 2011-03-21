@@ -1,6 +1,6 @@
 var assert = require('assert');
 var print = exports.print = require('sys').print;
-var selleck = exports.selleck = require('../lib/selleck');
+var whiskers = exports.whiskers = require('../lib/whiskers');
 
 // in each test, declare `common.expected = n;` for n asserts expected
 exports.expected = 0;

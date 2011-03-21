@@ -5,7 +5,7 @@
   <title>Basic Test</title>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-  <script src="../lib/selleck.js"></script>
+  <script src="../lib/whiskers.js"></script>
 
   <script type="text/javascript" charset="utf-8">
     var template = '<section class="comment">\n<header>\n<h1>A comment on {post.title}{if post.author}, written by {post.author}{/if}</h1>\n<p class="by">{comment.author}</p>\n</header>\n<div>{comment.content}</div>\n</section>';
@@ -21,7 +21,7 @@
     };
 
     $(document).ready(function() {
-      $('body').html(selleck.render(template, context));
+      $('body').html(whiskers.render(template, context));
     });
 
   </script> 

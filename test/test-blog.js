@@ -3,7 +3,7 @@
 var fs = require('fs');
 var common = require('./common');
 var assert = common.assert;
-var selleck = require('../lib/selleck');
+var whiskers = common.whiskers;
 
 common.expected = 1;
 
@@ -14,7 +14,7 @@ var partials = {
   addcomment: fs.readFileSync('test/templates/addcomment.html', 'utf8')
 };
 
-var rendered = selleck.render(template, context, partials);
+var rendered = whiskers.render(template, context, partials);
 
 // uncomment to update expected
 //fs.writeFileSync('test/rendered/blog.html', rendered);
