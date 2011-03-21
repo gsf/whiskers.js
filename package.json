@@ -1,12 +1,12 @@
-{ "name" : "selleck"
+{ "name" : "whiskers"
 , "description" : "A mustachioed templating library"
 , "version" : "0.0.1"
-, "author" : "Gabriel Farrell <gsf747@gmail.com>"
+, "author" : "Gabriel Farrell <g@grrawr.com>"
 , "engines" : { "node": ">=0.4.0" }
-, "main" : "lib/selleck"
+, "main" : "lib/whiskers"
 , "repository" :
   { "type" : "git"
-  , "url" : "http://github.com/gsf/selleck.js.git"
+  , "url" : "http://github.com/gsf/whiskers.js.git"
   }
 , "scripts" : { "test" : "make test" }
 }
