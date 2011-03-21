@@ -32,7 +32,9 @@ An example template:
 Installation
 ------------
 
-Coming soon.
+For the browser, simply source the file at `lib/selleck.js`.
+
+For node, `npm install selleck`.
 
 
 Usage
