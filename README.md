@@ -1,4 +1,4 @@
-Selleck is yet another mustachioed templating library.  This (selleck.js) 
+Whiskers is yet another mustachioed templating library.  This (whiskers.js) 
 is the JavaScript version.
 
 An example template:
@@ -32,15 +32,15 @@ An example template:
 Installation
 ------------
 
-For the browser, simply source the file at `lib/selleck.js`.
+For the browser, simply source the file at `lib/whiskers.js`.
 
-For node, `npm install selleck`.
+For node, `npm install whiskers`.
 
 
 Usage
 -----
 
-Selleck keeps templates readable by limiting tags to statements ("for" and
+Whiskers keeps templates readable by limiting tags to statements ("for" and
 "if"), variables, and partials.  A "for" tag loops over variables in an array:
 
     {for variable in array}
@@ -73,7 +73,7 @@ sub-template at that spot in the template:
 Templates are rendered as follows, where "template" is a string and "context"
 and "partials" are objects:
 
-    var rendered = selleck.render(template, context, partials);
+    var rendered = whiskers.render(template, context, partials);
 
 Any tag is escaped from rendering by prepending a backslash:
 
@@ -85,12 +85,12 @@ See the test directory for full usage examples.
 Philosophy
 ----------
 
-The limits of Selleck's templates (no filters or complex tags) encourage a
+The limits of Whiskers templates (no filters or complex tags) encourage a
 careful and thorough preparation of the context.  The retrieval, manipulation,
 and conversion of data for display is therefore kept separate from the 
 presentation.
 
-Selleck is influenced by these fine projects:
+Whiskers is influenced by these fine projects:
 
 * <http://github.com/janl/mustache.js>
 * <http://github.com/akdubya/dustjs>
