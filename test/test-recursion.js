@@ -7,19 +7,23 @@ var render = common.whiskers.render;
 common.expected = 1;
 
 var context = {
-  level: 1,
-  children: [
+  title: 'Bob',
+  authors: [
     {
-      level: 2,
-      children: [
-        {level: 3}
+      name: 'Liz',
+      pets: [
+        {name: 'Errol'}
       ]
-    }
+    },
+    {name: 'Jan'}  
   ]
 };
 
 var partials = {
-  recurse: '{level}{for child in children}{>recurse}{/for}'
+  author: 'author: {author.name}{for pet in author.pets}{>comma} {>pet}{/for}',
+  pet: 'pet: {pet.name}',
+  comma: ','
 };
 
-assert.equal(render('{>recurse}', context, partials), '4');
+console.log(render('book: {title}{for author in authors}{>comma} {>author}{/for}', context, partials));
+//assert.equal(render('{level}{for child in children}{>level2}{/for}', context, partials), '123');
