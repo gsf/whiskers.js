@@ -1,7 +1,23 @@
 Whiskers is yet another mustachioed templating library.  This (whiskers.js) 
 is the JavaScript version.
 
-An example template:
+Installation
+------------
+
+For the browser, simply source the file at `lib/whiskers.js`.
+
+For node, `npm install whiskers`.
+
+
+Usage
+-----
+
+Templates are rendered as follows, where "template" is a string and "context"
+and "partials" are objects:
+
+    var rendered = whiskers.render(template, context, partials);
+
+A template might look something like this:
 
     <h1>{blog.title}</h1>
     {if posts}
@@ -29,17 +45,6 @@ An example template:
     <p>No posts!</p>
     {/if}
 
-Installation
-------------
-
-For the browser, simply source the file at `lib/whiskers.js`.
-
-For node, `npm install whiskers`.
-
-
-Usage
------
-
 Whiskers keeps templates readable by limiting tags to statements ("for" and
 "if"), variables, and partials.  A "for" tag loops over variables in an array:
 
@@ -61,7 +66,7 @@ As you can see, "for" and "if" sections are closed by a corresponding tag with
 a leading slash. 
 
 Variable tags may use dot notation.  If the variable is a function, its return
-value will be used:  
+value will be used:
 
     {object.variable}
 
@@ -69,11 +74,6 @@ A partial tag begins with a greater-than sign.  It is replaced by a
 sub-template at that spot in the template:
 
     <div>{>partial}</div>
-
-Templates are rendered as follows, where "template" is a string and "context"
-and "partials" are objects:
-
-    var rendered = whiskers.render(template, context, partials);
 
 Any tag is escaped from rendering by prepending a backslash:
 
