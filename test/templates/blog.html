@@ -11,12 +11,12 @@
     <div>{post.content}</div>
   </article>
   {for comment in post.comments}
-{>comment}
+  {>comment}
   {/for}
   {if not post.comments}
   <p>No comments have yet been made.</p>
   {/if}
-{>addcomment}
+  {>addcomment}
 {/for}
 </section>
 {/if}
