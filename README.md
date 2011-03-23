@@ -52,7 +52,7 @@ Rendering as:
     <article>
       <header>
         <h1>My life</h1>
-        <p id="by">Bars Thorman</p>'
+        <p id="by">Bars Thorman</p>
       </header>
       <p id="tags">real vivid </p>
       <div>I grew up into a willow.</div>
