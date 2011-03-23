@@ -1,11 +1,12 @@
-// test template recursion
+// test partials
 
 var common = require('./common');
 var assert = common.assert;
-var render = common.whiskers.render;
+var whiskers = common.whiskers;
 
 common.expected = 1;
 
+var template = 'book: {title}{for author in authors}{>comma} {>author}{/for}';
 var context = {
   title: 'Bob',
   authors: [
@@ -18,12 +19,12 @@ var context = {
     {name: 'Jan'}  
   ]
 };
-
 var partials = {
   author: 'author: {author.name}{for pet in author.pets}{>comma} {>pet}{/for}',
   pet: 'pet: {pet.name}',
   comma: ','
 };
 
-console.log(render('book: {title}{for author in authors}{>comma} {>author}{/for}', context, partials));
-//assert.equal(render('{level}{for child in children}{>level2}{/for}', context, partials), '123');
+var rendered = whiskers.render(template, context, partials);
+var expected = 'book: Bob, author: Liz, pet: Errol, author: Jan';
+assert.equal(rendered, expected, 'unexpected result for partial in partial');
