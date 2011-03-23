@@ -103,9 +103,8 @@ Philosophy
 ----------
 
 The limits of Whiskers templates (no filters or complex tags) encourage a
-careful and thorough preparation of the context.  The retrieval, manipulation,
-and conversion of data for display is therefore kept separate from the 
-presentation.
+careful and thorough preparation of the context.  The retrieval and formatting
+of data for display is therefore kept separate from the presentation.
 
 Whiskers is influenced by these fine projects:
 
