@@ -1,5 +1,5 @@
-Whiskers is yet another mustachioed templating library.  This (whiskers.js) 
-is the JavaScript version.
+Whiskers is yet another mustachioed templating system.  This (whiskers.js) is
+the JavaScript library.
 
 Installation
 ------------
@@ -9,8 +9,8 @@ For the browser, simply source the file at `lib/whiskers.js`.
 For node, `npm install whiskers`.
 
 
-Usage
------
+Example
+-------
 
 Templates are rendered as follows, where "template" is a string and "context"
 and "partials" are objects:
@@ -19,31 +19,48 @@ and "partials" are objects:
 
 A template might look something like this:
 
-    <h1>{blog.title}</h1>
-    {if posts}
-    <section id="posts">
-    {for post in posts}
-      <article>
-        <header>
-          <h1>{post.title}</h1>
-          <p class="by">{post.author}</p>
-        </header>
-        <p class="tags">{for tag in post.tags}{tag} {/for}</p>
-        <div>{post.content}</div>
-      </article>
-      {for comment in post.comments}
-    {>comment}
-      {/for}
-      {if not post.comments}
-      <p>No comments have yet been made.</p>
-      {/if}
-    {>addcomment}
-    {/for}
-    </section>
-    {/if}
-    {if not posts}
-    <p>No posts!</p>
-    {/if}
+    <article>
+      <header>
+        {>header}
+      </header>
+      {if tags}
+      <p class="tags">{for tag in tags}{tag} {/for}</p>
+      {\if}
+      <div>{content}</div>
+    </article>
+
+With the following context:
+
+    {
+      title: 'My life',
+      author: 'Bars Thorman',
+      tags: [
+        'real',
+        'vivid'
+      ],
+      content: 'I grew up into a willow.'
+    }
+
+And the following partials:
+
+    {
+      header: '<h1>{title}</h1>\n<p class="by">{author}</p>'
+    }
+
+Rendering as:
+
+    <article>
+      <header>
+        <h1>My life</h1>
+        <p class="by">Bars Thorman</p>'
+      </header>
+      <p class="tags">real vivid </p>
+      <div>I grew up into a willow.</div>
+    </article>
+
+
+Usage
+-----
 
 Whiskers keeps templates readable by limiting tags to statements ("for" and
 "if"), variables, and partials.  A "for" tag loops over variables in an array:
