@@ -24,7 +24,11 @@ A template might look something like this:
         {>header}
       </header>
       {if tags}
-      <p id="tags">{for tag in tags}{tag} {/for}</p>
+      <ul id="tags">
+        {for tag in tags}
+        <li>{tag}</li>
+        {/for}
+      </ul>
       {\if}
       <div>{content}</div>
     </article>
@@ -38,7 +42,7 @@ With the following context:
         'real',
         'vivid'
       ],
-      content: 'I grew up into a willow.'
+      content: 'I grew up into a fine willow.'
     }
 
 And the following partials:
@@ -47,15 +51,18 @@ And the following partials:
       header: '<h1>{title}</h1>\n<p id="by">{author}</p>'
     }
 
-Rendering as:
+It would be rendered as this:
 
     <article>
       <header>
         <h1>My life</h1>
         <p id="by">Bars Thorman</p>
       </header>
-      <p id="tags">real vivid </p>
-      <div>I grew up into a willow.</div>
+      <ul id="tags">
+        <li>real</li>
+        <li>vivid</li>
+      </ul>
+      <div>I grew up into a fine willow.</div>
     </article>
 
 
