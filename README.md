@@ -1,5 +1,12 @@
-Whiskers is yet another mustachioed templating system.  This (whiskers.js) is
-the JavaScript library.
+Whiskers.js
+===========
+
+About
+-----
+
+At under 100 lines of code, Whiskers.js may be the smallest well-documented,
+production-ready, mustachioed templating system implemented in JavaScript.
+
 
 Installation
 ------------
@@ -69,8 +76,15 @@ It would be rendered as this:
 Usage
 -----
 
-Whiskers keeps templates readable by limiting tags to statements ("for" and
-"if"), variables, and partials.  A "for" tag loops over variables in an array:
+Whiskers keeps templates readable by limiting tags to variables, statements 
+("for" and "if"), and partials.
+
+Variable tags retrieve data from the context object.  They may use dot 
+notation:
+
+    {object.variable}
+
+A "for" tag loops over variables in an array:
 
     {for variable in array}
       <p>{variable}</p>
@@ -88,11 +102,6 @@ the inverse:
 
 As you can see, "for" and "if" sections are closed by a corresponding tag with
 a leading slash. 
-
-Variable tags may use dot notation.  If the variable is a function, its return
-value will be used:
-
-    {object.variable}
 
 A partial tag begins with a greater-than sign.  It is replaced by a
 sub-template at that spot in the template:
