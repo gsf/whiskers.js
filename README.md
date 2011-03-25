@@ -87,8 +87,7 @@ Usage
 Whiskers keeps templates readable by limiting tags to variables, statements 
 ("for" and "if"), and partials.
 
-Variable tags retrieve data from the context object.  They may use dot 
-notation:
+Variable tags retrieve data from the context.  They may use dot notation:
 
     {object.variable}
 
