@@ -123,8 +123,8 @@ Any tag is escaped from rendering by prepending a backslash:
 See the test directory for many usage examples.
 
 
-Links
------
+Forebears
+---------
 
 Whiskers is influenced by these fine projects:
 
