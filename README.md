@@ -7,7 +7,7 @@ About
 At around 100 lines of code, Whiskers.js may be the smallest mustachioed
 templating system, compiling templates to pure, incorruptible JavaScript for
 quick execution.  Take a look at [the code][code]!  It's straightforward and 
-well documented.
+documented.
 
 [code]: https://github.com/gsf/whiskers.js/blob/master/lib/whiskers.js
 
