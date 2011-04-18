@@ -4,7 +4,7 @@ var common = require('./common');
 var assert = common.assert;
 var whiskers = common.whiskers;
 
-common.expected = 8;
+common.expected = 9;
 
 assert.equal(whiskers.render('{>p}', {}, {}), '');
 assert.equal(whiskers.render('{>p.a}', {}, {}), '');
@@ -14,6 +14,7 @@ assert.equal(whiskers.render('{>p}', {}, {p:function(){return 2}}), 'function ()
 assert.equal(whiskers.render('{>p}', {}, {p:function(){return '2'}()}), '2');
 
 assert.equal(whiskers.render('{>p.a}', {}, {p:{a:'foo'}}), 'foo');
+assert.equal(whiskers.render('{>p.a.b}', {}, {p:{a:{b:'foo'}}}), 'foo');
 
 var template = 'book: {title}{for author in authors}{>comma} {>author}{/for}';
 var context = {
