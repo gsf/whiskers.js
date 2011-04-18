@@ -18,4 +18,4 @@ var context = {
   nums: [1,2,3]
 }
 
-assert.equal(eval(whiskers.compile(template))(context), 'bob and sal and 123');
+assert.equal(whiskers.compile(template)(context), 'bob and sal and 123');
