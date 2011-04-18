@@ -28,18 +28,6 @@ var benches = {
     partials: { replace: "Hello {peep.name}! You have {peep.count} new messages." }
   },
 
-  recursion: {
-    source:   "",
-    context:  {},
-    partials: {}
-  },
-
-  filter: {
-    source:   "",
-    context:  {},
-    partials: {}
-  },
-
   complex: {
     source:  "<h1>{header}</h1>{if items}<ul>{for item in items}{if item.current}" +
              "<li><strong>{item.name}</strong></li>{/if}{if not item.current}" +

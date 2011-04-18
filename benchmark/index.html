@@ -98,7 +98,7 @@
         function runAll() {
           $bar.css('width', "0%");
           $('#progress').show();
-          for (var key in dustBench.benches) { testQueue.push(key) }
+          for (var key in whiskersBench.benches) { testQueue.push(key) }
           tick = 100 / testQueue.length;
           $('#charts').empty();
           next();
