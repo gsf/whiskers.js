@@ -4,7 +4,7 @@ var common = require('./common');
 var assert = common.assert;
 var whiskers = common.whiskers;
 
-common.expected = 9;
+common.expected = 11;
 
 assert.equal(whiskers.render('{>p}', {}, {}), '');
 assert.equal(whiskers.render('{>p.a}', {}, {}), '');
@@ -38,3 +38,21 @@ var partials = {
 var rendered = whiskers.render(template, context, partials);
 var expected = 'book: Bob, author: Liz, pet: Errol, author: Jan';
 assert.equal(rendered, expected, 'unexpected result for partial in partial');
+
+
+var template = 'template for infinitely recursive {>partial}';
+var context = {a:'.'};
+var partials = {partial: '{a}{>partial}'};
+
+// stub out console.warn
+var temp = console.warn;
+var warning;
+console.warn = function(message) {
+  warning = message;
+};
+var rendered = whiskers.render(template, context, partials);
+console.warn = temp;
+
+var expected = 'template for infinitely recursive .....................{>partial}';
+assert.equal(rendered, expected);
+assert.equal(warning, 'maximum template depth reached');
