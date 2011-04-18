@@ -46,6 +46,8 @@ A template might look something like this:
       </ul>
       {\if}
       <div>{content}</div>
+      {!<p>this paragraph is 
+        commented out</p>!}
     </article>
 
 With the following context:
@@ -85,7 +87,7 @@ Usage
 -----
 
 Whiskers keeps templates readable by limiting tags to variables, statements 
-("for" and "if"), and partials.
+("for" and "if"), partials, and comments.
 
 Variable tags retrieve data from the context.  They may use dot notation:
 
@@ -114,6 +116,12 @@ A partial tag begins with a greater-than sign.  It is replaced by a
 sub-template at that spot in the template:
 
     <div>{>partial}</div>
+
+Comment tags comment out part of the template.  They begin and end with 
+exclamation points. They can include newlines, spaces, and other tags.
+
+    <p>{!these words and this {tag} 
+      will not be rendered!}</p>
 
 Any tag is escaped from rendering by prepending a backslash:
 

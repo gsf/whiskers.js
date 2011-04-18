@@ -2,42 +2,33 @@
 
 var common = require('./common');
 var assert = common.assert;
-var whiskers = common.whiskers;
+var render = common.whiskers.render;
 
-//common.expected = 11;
-//
-//var template = '{!this won\'t show up!}';
-//
-//assert.equal(whiskers.render(template, {}), '')
-//
-//var context = {arr:[1,2,3]};
-//assert.equal(whiskers.render(template, context), '123')
-//
-//context = {arr:'string'};
-//assert.equal(whiskers.render(template, context), 'string')
-//
-//context = {arr:3};
-//assert.equal(whiskers.render(template, context), '')
-//
-//context = {arr:{b:'orange'}};
-//assert.equal(whiskers.render(template, context), '')
-//
-//context = {arr:function(){return [1,2,3]}};
-//assert.equal(whiskers.render(template, context), '123')
-//
-//template = '{for x in arr}{x.y}{/for}';
-//
-//assert.equal(whiskers.render(template, {}), '')
-//
-//context = {arr:[{y:1},{y:2},{y:3}]};
-//assert.equal(whiskers.render(template, context), '123')
-//
-//context = {arr:[1,2,3]};
-//assert.equal(whiskers.render(template, context), '')
-//
-//context = {arr:'string'};
-//assert.equal(whiskers.render(template, context), '')
-//
-//context = {arr:{b:'orange'}};
-//assert.equal(whiskers.render(template, context), '')
-//
+common.expected = 9;
+
+var template = '{!this won\'t show up!}';
+assert.equal(render(template, {}), '')
+
+var template = '{!!}';
+assert.equal(render(template, {}), '')
+
+var template = '{!this won\'t show up\neither!}';
+assert.equal(render(template, {}), '')
+
+var template = '{!this won\'t {show} up!}';
+assert.equal(render(template, {}), '')
+
+var template = '\\{!this will show up!}';
+assert.equal(render(template, {}), '{!this will show up!}')
+
+var template = '{!this will also show up}';
+assert.equal(render(template, {}), '{!this will also show up}')
+
+var template = '{!this won\'t, but!}this part will show up!}';
+assert.equal(render(template, {}), 'this part will show up!}')
+
+var template = '{also, {!this} part won\'t show up!}';
+assert.equal(render(template, {}), '{also, ')
+
+var template = 'extra newlines\n{!will!}\nbe dropped';
+assert.equal(render(template, {}), 'extra newlines\nbe dropped')

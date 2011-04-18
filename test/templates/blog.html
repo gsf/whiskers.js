@@ -9,6 +9,9 @@
     </header>
     <p class="tags">{for tag in post.tags}{tag} {/for}</p>
     <div>{post.content}</div>
+    {!
+    <div>Commented-out section</div>
+    !}
   </article>
   {for comment in post.comments}
   {>comment}
