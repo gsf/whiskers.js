@@ -44,7 +44,7 @@ A template might look something like this:
         <li>{tag}</li>
         {/for}
       </ul>
-      {\if}
+      {/if}
       <div>{content}</div>
       {!<p>this paragraph is 
         commented out</p>!}
