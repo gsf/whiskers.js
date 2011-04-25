@@ -1,10 +1,10 @@
-// test for different possible array values
+// test of for tag
 
 var common = require('./common');
 var assert = common.assert;
 var whiskers = common.whiskers;
 
-common.expected = 11;
+common.expected = 13;
 
 var template = '{for x in arr}{x}{/for}';
 
@@ -40,3 +40,10 @@ assert.equal(whiskers.render(template, context), '')
 
 context = {arr:{b:'orange'}};
 assert.equal(whiskers.render(template, context), '')
+
+template = '{for x in arr}{for y in x}{y.z}{/for}{/for}';
+
+assert.equal(whiskers.render(template, {}), '')
+
+context = {arr:[[{z:1},{z:2}],[{z:3}]]};
+assert.equal(whiskers.render(template, context), '123')
