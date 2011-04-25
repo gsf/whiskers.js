@@ -24,7 +24,7 @@ console.warn = function(message) {
 assert.equal(render('{if biz}{foo}{else}bim{else}bam{/if}', context), 'bimbam');
 
 var template = '{else}{if biz}{foo}{else}bim{else}bam{/if}{else}{if fob}{else}';
-assert.equal(render(template, context), 'bimbam');
+assert.equal(render(template, context), 'bimbom');
 
 var template = '{else}{if biz}{foo}{else}bim{if foo}bam{else}bom{else}';
 assert.equal(render(template, context), 'bimbam');
