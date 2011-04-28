@@ -7,6 +7,7 @@ var render = common.whiskers.render;
 common.expected = 11;
 
 var context = {foo:'bar'};
+
 assert.equal(render('{if foo}{foo}{/if}', context), 'bar');
 assert.equal(render('{if biz}{foo}{/if}', context), '');
 assert.equal(render('{if not foo}{foo}{/if}', context), '');
@@ -24,15 +25,15 @@ console.warn = function(message) {
 assert.equal(render('{if biz}{foo}{else}bim{else}bam{/if}', context), 'bimbam');
 
 var template = '{else}{if biz}{foo}{else}bim{else}bam{/if}{else}{if fob}{else}';
-assert.equal(render(template, context), 'bimbom');
+assert.equal(render(template, context), 'bimbam');
 
 var template = '{else}{if biz}{foo}{else}bim{if foo}bam{else}bom{else}';
 assert.equal(render(template, context), 'bimbam');
 
-var template = '{if foo}{foo}{if biz}{foo}{else}bim{/if}{else}bom{else}';
+var template = '{if foo}{foo}{if biz}{foo}{else}bim{/if}{for blat in bam}{else}bom{else}{if brim}';
 assert.equal(render(template, context), 'barbim');
 
-assert.equal(warnings.length, 12);
+assert.equal(warnings.length, 14);
 
 // return to normal
 console.warn = temp;
