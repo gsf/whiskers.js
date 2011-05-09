@@ -1,4 +1,4 @@
-// test if tag
+// test "if" tag
 
 var common = require('./common');
 var assert = common.assert;
