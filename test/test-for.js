@@ -1,4 +1,4 @@
-// test of for tag
+// test "for" tag
 
 var common = require('./common');
 var assert = common.assert;
