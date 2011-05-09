@@ -137,5 +137,5 @@ Whiskers is influenced by these fine projects:
 
 * <http://github.com/janl/mustache.js>
 * <http://github.com/akdubya/dustjs>
-* <http://github.com/andychu/json-template>
+* <http://code.google.com/p/json-template/>
 * <http://docs.djangoproject.com/en/dev/ref/templates/>
