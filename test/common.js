@@ -1,5 +1,4 @@
 var assert = require('assert');
-var print = exports.print = require('sys').print;
 var whiskers = exports.whiskers = require('../lib/whiskers');
 // uncomment to test minified
 //var whiskers = exports.whiskers = require('../dist/whiskers.min');
@@ -12,7 +11,7 @@ var wrapAssert = function(fn) {
   return function() {
     assert[fn].apply(this, arguments);
     count++;
-    print('.');
+    process.stdout.write('.');
   };
 };
 
@@ -25,6 +24,5 @@ for (var fn in assert) {
 }
 
 process.on('exit', function() {
-  print(' ran ' + count + ' of ' + exports.expected + ' tests.\n');
+  process.stdout.write(' ran ' + count + ' of ' + exports.expected + ' tests.\n');
 });
-
