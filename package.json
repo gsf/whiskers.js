@@ -8,5 +8,11 @@
   { "type" : "git"
   , "url" : "http://github.com/gsf/whiskers.js.git"
   }
-, "scripts" : { "test" : "make test" }
+, "scripts" : 
+  { "pretest" : "node compile.js"
+  , "test" : "find test/test-*.js | xargs -n 1 -t node"
+  }
+, "devDependencies" :
+  { "uglify-js" : ">=1.1.1"
+  }
 }
