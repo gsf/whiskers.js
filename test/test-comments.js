@@ -4,7 +4,7 @@ var common = require('./common');
 var assert = common.assert;
 var render = common.whiskers.render;
 
-common.expected = 9;
+common.expected = 8;
 
 var template = '{!this won\'t show up!}';
 assert.equal(render(template, {}), '')
@@ -29,6 +29,3 @@ assert.equal(render(template, {}), 'this part will show up!}')
 
 var template = '{also, {!this} part won\'t show up!}';
 assert.equal(render(template, {}), '{also, ')
-
-var template = 'extra newlines\n{!will!}\nbe dropped';
-assert.equal(render(template, {}), 'extra newlines\nbe dropped')
