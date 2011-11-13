@@ -22,7 +22,7 @@ assert.equal(whiskers.render(template, context), '')
 context = {arr:{b:'orange'}};
 assert.equal(whiskers.render(template, context), '')
 
-context = {arr:function(){return [1,2,3]}};
+context = {arr:function(){return [1,2,3]}()};
 assert.equal(whiskers.render(template, context), '123')
 
 template = '{for x in arr}{x.y}{/for}';

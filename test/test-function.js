@@ -9,7 +9,7 @@ common.expected = 1;
 var context = {
   add2and2: function() {
     return 2+2;
-  }
+  }()
 };
 
 assert.equal(render('{add2and2}', context), '4');

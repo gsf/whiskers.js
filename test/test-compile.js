@@ -17,5 +17,4 @@ var context = {
   sam: 'sal',
   nums: [1,2,3]
 }
-
 assert.equal(compile(template)(context), 'bob and sal and 123');
