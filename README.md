@@ -4,14 +4,14 @@ Whiskers.js
 About
 -----
 
-Whiskers is a templating system focused on template readability.  By limiting
-template logic, the processing and formatting of data is kept separate from the
-design of its display.
+Whiskers is a templating system focused on template readability. By limiting
+template logic, careful preparation of the context is encouraged, and the 
+processing and formatting of data is kept separate from the design of its 
+display.
 
-At around 100 lines of code, Whiskers.js may be the smallest mustachioed
-templating system, compiling templates to pure, incorruptible JavaScript for
-quick execution.  Take a look at the [code][]!  It's straightforward and 
-documented.
+At around 100 lines, Whiskers.js may be the smallest mustachioed templating 
+system. It also compiles and caches for quick execution. Take a look at the 
+well-documented [code][]!
 
 [code]: https://github.com/gsf/whiskers.js/blob/master/lib/whiskers.js
 
