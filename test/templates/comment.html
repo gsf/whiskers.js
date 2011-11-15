@@ -1,7 +1,7 @@
 <section class="comment">
   <header>
-    <h1>A comment on {post.title}{if post.author}, written by {post.author}{/if}</h1>
-    <p class="by">{comment.author}</p>
+    <h1>A comment on {postTitle}{?author}, written by {author}{/author}</h1>
+    <p class="by">{commenter}</p>
   </header>
-  <div>{comment.content}</div>
+  <div>{comment}</div>
 </section>

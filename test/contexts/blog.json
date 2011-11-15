@@ -1,38 +1,49 @@
 {
-  "blog": {
-    "title": "Scrumptious lessons"
-  },
+  "title": "Scrumptious lessons",
   "posts": [
     {
-      "title": "A happy time",
+      "postTitle": "A happy time",
+      "id": "qrw",
       "content": "<p>In my childhood I would laugh and play.</p>",
       "author": "Hornsby Sumpin",
-      "tags": ["happy", "fun", "joy"]
+      "tags": [
+        {"tag": "happy"},
+        {"tag": "fun"},
+        {"tag": "joy"}
+      ]
     },
     {
-      "title": "Better days",
+      "postTitle": "Better days",
+      "id": "23h",
       "content": "<p>Pals are a necessity in this lonely world.</p>",
       "author": "Baffle McCough",
-      "tags": ["mirth", "briny", "pith"],
+      "tags": [
+        {"tag": "mirth"},
+        {"tag": "briny"},
+        {"tag": "pith"}
+      ],
       "comments": [
         {
-          "content": "I stand in complete agreement.",
-          "author": "Bitters Compote"
+          "comment": "I stand in complete agreement.",
+          "commenter": "Bitters Compote"
         },
         {
-          "content": "What a baleful load of beeswax.",
-          "author": "Gluglug Baldag"
+          "comment": "What a baleful load of beeswax.",
+          "commenter": "Gluglug Baldag"
         }
       ]
     },
     {
-      "title": "True madness",
+      "postTitle": "True madness",
+      "id": "br2",
       "content": "<p>Let us begin again, as we were when we were babies.</p><p>Further and further from the truth we could never travel.</p>",
-      "tags": ["malaise"],
+      "tags": [
+        {"tag": "malaise"}
+      ],
       "comments": [
         {
-          "content": "I am comforted by our debate.",
-          "author": "Mildrand Brumpup"
+          "comment": "I am comforted by our debate.",
+          "commenter": "Mildrand Brumpup"
         }
       ]
     }

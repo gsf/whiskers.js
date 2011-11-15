@@ -13,7 +13,7 @@ var benches = {
   },
 
   array: {
-    source:  "{for name in names}{name.name}{/for}",
+    source:  "{#names}{name}{/names}",
     context: { names: [{name: "Moe"}, {name: "Larry"}, {name: "Curly"}, {name: "Shemp"}] }
   },
 
@@ -23,16 +23,16 @@ var benches = {
   },
 
   partial: {
-    source:   "{for peep in peeps}{>replace}{/for}",
+    source:   "{#peeps}{>replace}{/peeps}",
     context:  { peeps: [{name: "Moe", count: 15}, {name: "Larry", count: 5}, {name: "Curly", count: 1}] },
-    partials: { replace: "Hello {peep.name}! You have {peep.count} new messages." }
+    partials: { replace: "Hello {name}! You have {count} new messages." }
   },
 
   complex: {
-    source:  "<h1>{header}</h1>{if items}<ul>{for item in items}{if item.current}" +
-             "<li><strong>{item.name}</strong></li>{/if}{if not item.current}" +
-             "<li><a href=\"{item.url}\">{item.name}</a></li>{/if}" +
-             "{/for}</ul>{/if}{if not items}<p>The list is empty.</p>{/if}",
+    source:  "<h1>{header}</h1>{?items}<ul>{#items}{?current}" +
+             "<li><strong>{name}</strong></li>{^current}" +
+             "<li><a href=\"{url}\">{name}</a></li>{/if}" +
+             "{/current}</ul>{^items}<p>The list is empty.</p>{/items}",
     context: {
                header: function() {
                  return "Colors";
