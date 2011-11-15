@@ -111,7 +111,7 @@ the inverse:
     {/if}
 
 As you can see, "for" and "if" sections are closed by a corresponding tag with
-a leading slash. The previous example could also be shortened to the following:
+a leading slash. The previous example could also be shortened:
 
     {if variable}
       <p>{variable}</p>
@@ -120,7 +120,7 @@ a leading slash. The previous example could also be shortened to the following:
     {/if}
 
 The "else" tag can also be used with "for" to display something when the array
-is empty, as follows:
+is empty:
 
     {for variable in array}
       <p>{variable}</p>
