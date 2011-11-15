@@ -1,6 +1,6 @@
 { "name" : "whiskers"
 , "description" : "A mustachioed templating library"
-, "version" : "0.0.10"
+, "version" : "0.0.11"
 , "author" : "Gabriel Farrell <g@grrawr.com>"
 , "engines" : { "node": ">=0.4.0" }
 , "main" : "lib/whiskers"
