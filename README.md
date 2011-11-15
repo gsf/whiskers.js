@@ -38,11 +38,13 @@ A template might look something like this:
         {>header}
       </header>
       {if tags}
-      <ul id="tags">
-        {for tag in tags}
-        <li>{tag}</li>
-        {/for}
-      </ul>
+        <ul id="tags">
+          {for tag in tags}
+          <li>{tag}</li>
+          {/for}
+        </ul>
+      {else}
+        <p>No tags!</p>
       {/if}
       <div>{content}</div>
       {!<p>this paragraph is 
@@ -86,7 +88,7 @@ Usage
 -----
 
 Whiskers keeps templates readable by limiting tags to variables, statements 
-("for" and "if"), partials, and comments.
+("for", "if", and "else"), partials, and comments.
 
 Variable tags retrieve data from the context.  They may use dot notation:
 
@@ -109,7 +111,22 @@ the inverse:
     {/if}
 
 As you can see, "for" and "if" sections are closed by a corresponding tag with
-a leading slash. 
+a leading slash. The previous example could also be shortened to the following:
+
+    {if variable}
+      <p>{variable}</p>
+    {else}
+      <p>No variable!</p>
+    {/if}
+
+The "else" tag can also be used with "for" to display something when the array
+is empty, as follows:
+
+    {for variable in array}
+      <p>{variable}</p>
+    {else}
+      <p>Nothing in the array!</p>
+    {/for}
 
 A partial tag begins with a greater-than sign.  It is replaced by a
 sub-template at that spot in the template:
