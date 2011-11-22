@@ -1,7 +1,7 @@
 var assert = require('assert');
-exports.whiskers = require('../dist/whiskers.min');
+exports.whiskers = require('../../dist/whiskers.min');
 // uncomment to test non-minified code
-//exports.whiskers = require('../lib/whiskers');
+//exports.whiskers = require('../../lib/whiskers');
 
 // in each test, declare `common.expected = n;` for n asserts expected
 exports.expected = 0;
