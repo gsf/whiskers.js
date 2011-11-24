@@ -5,6 +5,7 @@ var fs = require('fs');
 var http = require('http');
 var common = require('./common');
 var assert = common.assert;
+var whiskers = common.whiskers;
 
 common.expected = 1;
 
@@ -12,7 +13,7 @@ var app = express.createServer();
 
 // the following line is all that's needed for whiskers to handle
 // all html templates
-app.register('.html', common.whiskers);
+app.register('.html', whiskers);
 
 app.set('views', __dirname+'/templates');
 
