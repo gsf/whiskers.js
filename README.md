@@ -23,6 +23,14 @@ For the browser, simply source the file at `lib/whiskers.js`.
 For node, `npm install whiskers`.
 
 
+Tests
+-----
+
+For the browser, visit `test/browser/index.html`.
+
+For node, `npm test`.
+
+
 Example
 -------
 
