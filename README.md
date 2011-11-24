@@ -22,6 +22,10 @@ For the browser, simply source the file at `lib/whiskers.js`.
 
 For node, `npm install whiskers`.
 
+For use in [Express][], see `test/server/test-express.js`.
+
+[express]: http://expressjs.com/
+
 
 Tests
 -----

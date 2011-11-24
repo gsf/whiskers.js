@@ -13,6 +13,7 @@
   , "test" : "find test/server/test-*.js | xargs -n 1 -t node"
   }
 , "devDependencies" :
-  { "uglify-js" : ">=1.1.1"
+  { "express": ">=2.2.1"
+  , "uglify-js" : ">=1.1.1"
   }
 }
