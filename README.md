@@ -18,7 +18,9 @@ well-documented [code][]!
 Installation
 ------------
 
-For the browser, simply source the file at `lib/whiskers.js`.
+For the browser, source the minified version at `dist/whiskers.min.js` (or 
+get it directly from GitHub at 
+<https://raw.github.com/gsf/whiskers.js/master/dist/whiskers.min.js>).
 
 For node, `npm install whiskers`.
 
@@ -155,7 +157,7 @@ Any tag is escaped from rendering by prepending a backslash:
 
     \{variable}
 
-See the test directory for many usage examples.
+See the test directory for server and browser usage examples.
 
 
 Forebears
