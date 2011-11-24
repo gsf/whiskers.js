@@ -38,6 +38,6 @@ app.listen(3000, function() {
       process.exit();
     });
   }).on('error', function(e) {
-    console.log(e);
+    throw e;
   });
 });
