@@ -1,6 +1,6 @@
 // test for comments in templates
 
-test('comments', 8, function() {
+test('comments', 9, function() {
   var template = '{!this won\'t show up!}';
   equal(whiskers.render(template, {}), '')
 
@@ -24,4 +24,7 @@ test('comments', 8, function() {
 
   var template = '{also, {!this} part won\'t show up!}';
   equal(whiskers.render(template, {}), '{also, ')
+
+  var template = '{!more than !}just one{!silly!} comment';
+  equal(whiskers.render(template, {}), 'just one comment');
 });
