@@ -1,13 +1,12 @@
 // test partials
 
-test('partials', 11, function() {
+test('partials', 10, function() {
   equal(whiskers.render('{>p}'), '');
   equal(whiskers.render('{>p}', {}, {}), '');
   equal(whiskers.render('{>p.a}'), '');
   equal(whiskers.render('{>p.a}', {}, {}), '');
   equal(whiskers.render('{>p}', {}, {p:3}), '3');
   equal(whiskers.render('{>p}', {}, {p:[]}), '');
-  equal(whiskers.render('{>p}', {}, {p:function(){return 2}}), 'function (){return 2}');
   equal(whiskers.render('{>p}', {}, {p:function(){return '2'}()}), '2');
 
   equal(whiskers.render('{>p.a}', {}, {p:{a:'foo'}}), 'foo');
