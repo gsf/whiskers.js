@@ -12,7 +12,7 @@ assert.equal(whiskers.render('{>p.a}'), '');
 assert.equal(whiskers.render('{>p.a}', {}, {}), '');
 assert.equal(whiskers.render('{>p}', {}, {p:3}), '3');
 assert.equal(whiskers.render('{>p}', {}, {p:[]}), '');
-assert.equal(whiskers.render('{>p}', {}, {p:function(){return 2}}), 'function (){return 2}');
+assert.equal(whiskers.render('{>p}', {}, {p:function(){return 2}}), 2);
 assert.equal(whiskers.render('{>p}', {}, {p:function(){return '2'}()}), '2');
 
 assert.equal(whiskers.render('{>p.a}', {}, {p:{a:'foo'}}), 'foo');
