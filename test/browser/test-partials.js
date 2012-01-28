@@ -7,7 +7,7 @@ test('partials', 10, function() {
   equal(whiskers.render('{>p.a}', {}, {}), '');
   equal(whiskers.render('{>p}', {}, {p:3}), '3');
   equal(whiskers.render('{>p}', {}, {p:[]}), '');
-  equal(whiskers.render('{>p}', {}, {p:function(){return '2'}()}), '2');
+  equal(whiskers.render('{>p}', {}, {p:function(){return 'foo'}}), 'foo');
 
   equal(whiskers.render('{>p.a}', {}, {p:{a:'foo'}}), 'foo');
   equal(whiskers.render('{>p.a.b}', {}, {p:{a:{b:'foo'}}}), 'foo');
@@ -33,5 +33,5 @@ test('partials', 10, function() {
 
   var rendered = whiskers.render(template, context, partials);
   var expected = 'book: Bob, author: Liz, pet: Errol, author: Jan';
-  equal(rendered, expected, 'unexpected result for partial in partial');
+  equal(rendered, expected);
 });
