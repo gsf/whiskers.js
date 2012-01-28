@@ -13,4 +13,4 @@ assert.equal(whiskers.render('{>bar}'), '');
 assert.equal(whiskers.render(3), '3');
 assert.equal(whiskers.render([1,2,3]), '1,2,3');
 assert.equal(whiskers.render({p:3}), '[object Object]');
-assert.equal(whiskers.render(function(){return 3}), 'function (){return 3}');
+assert.equal(whiskers.render(function(){return 3}), 3);
