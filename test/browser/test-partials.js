@@ -1,6 +1,6 @@
 // test partials
 
-test('partials', 10, function() {
+test('partials', 11, function() {
   equal(whiskers.render('{>p}'), '');
   equal(whiskers.render('{>p}', {}, {}), '');
   equal(whiskers.render('{>p.a}'), '');
@@ -34,4 +34,30 @@ test('partials', 10, function() {
   var rendered = whiskers.render(template, context, partials);
   var expected = 'book: Bob, author: Liz, pet: Errol, author: Jan';
   equal(rendered, expected);
+  
+  //
+  // context self reference
+  var template = '{me} friends:{for f in friends} {>friend}{/for}';
+  var partials = {
+     friend: '[{self.name}:{self.status}{for f in self.friends} {>friend}{/for}]',
+  };
+  var context = {
+     me: 'Bob',
+     friends: [
+        {
+           name: 'Liz',
+           status: 'online',
+           friends: [
+              {
+                 name: 'Errol',
+                 status: 'offline'
+              }
+           ]
+        }
+     ]
+  };
+  var rendered = whiskers.render(template, context, partials);
+  var expected = 'Bob friends: [Liz:online [Errol:offline]]';
+  equal(rendered, expected);
+  
 });
