@@ -4,10 +4,11 @@ var common = require('./common');
 var assert = common.assert;
 var whiskers = common.whiskers;
 
-common.expected = 10;
+common.expected = 11;
 
+assert.equal(whiskers.compile('{>p}')(), '');
 assert.equal(whiskers.render('{>p}'), '');
-assert.equal(whiskers.render('{>p}', {}, {}), '');
+assert.equal(whiskers.render('{>p}', {test:'bob'}), '');
 assert.equal(whiskers.render('{>p.a}'), '');
 assert.equal(whiskers.render('{>p.a}', {}, {}), '');
 assert.equal(whiskers.render('{>p}', {}, {p:3}), '3');

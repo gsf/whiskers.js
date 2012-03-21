@@ -1,6 +1,7 @@
 // test partials
 
-test('partials', 10, function() {
+test('partials', 11, function() {
+  equal(whiskers.compile('{>p}')(), '');
   equal(whiskers.render('{>p}'), '');
   equal(whiskers.render('{>p}', {}, {}), '');
   equal(whiskers.render('{>p.a}'), '');
