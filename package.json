@@ -2,6 +2,9 @@
 , "description" : "A mustachioed templating library"
 , "version" : "0.1.5"
 , "author" : "Gabriel Farrell <g@grrawr.com>"
+, "contributors" : 
+  [ "Ernesto Méndez <der@der-design.com>"
+  ]
 , "engines" : { "node": ">=0.4.0" }
 , "main" : "lib/whiskers"
 , "repository" :
