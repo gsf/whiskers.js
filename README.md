@@ -6,7 +6,7 @@ About
 
 Whiskers is focused on template readability. By limiting template logic, 
 careful preparation of the context is encouraged, and the processing and 
-formatting of data is kept separate from the design of its display.
+formatting of data is kept separate from the design of the display.
 
 At around 100 lines, Whiskers.js may be the smallest mustachioed templating 
 system. It also compiles and caches for quick execution. Take a look at the 
@@ -41,9 +41,9 @@ Example
 -------
 
 Templates are rendered as follows, where "template" is a string and "context"
-and "partials" are objects:
+is an object:
 
-    var rendered = whiskers.render(template, context, partials);
+    var rendered = whiskers.render(template, context);
 
 A template might look something like this:
 
@@ -68,6 +68,7 @@ A template might look something like this:
 With the following context:
 
     {
+      header: '<h1>{title}</h1>\n<p id="by">{author}</p>',
       title: 'My life',
       author: 'Bars Thorman',
       tags: [
@@ -75,12 +76,6 @@ With the following context:
         'vivid'
       ],
       content: 'I grew up into a fine willow.'
-    }
-
-And the following partials:
-
-    {
-      header: '<h1>{title}</h1>\n<p id="by">{author}</p>'
     }
 
 It would be rendered as this:

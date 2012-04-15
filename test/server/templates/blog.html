@@ -14,12 +14,12 @@
     !}
   </article>
   {for comment in post.comments}
-  {>comment}
+    {>commentSection}
   {/for}
   {if not post.comments}
   <p>No comments have yet been made.</p>
   {/if}
-  {>addcomment}
+  {>addComment}
 {/for}
 </section>
 {/if}
