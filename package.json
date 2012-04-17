@@ -16,7 +16,7 @@
   , "test" : "find test/server/test-*.js | xargs -n 1 -t node"
   }
 , "devDependencies" :
-  { "express": ">=2.2.1"
+  { "express": "git://github.com/visionmedia/express.git"
   , "uglify-js" : ">=1.1.1"
   }
 }

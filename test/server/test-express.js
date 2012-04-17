@@ -9,16 +9,26 @@ var whiskers = common.whiskers;
 
 common.expected = 1;
 
-var app = express.createServer();
-
-// the following line is all that's needed for whiskers to handle
-// all html templates
-app.register('.html', whiskers);
-
+var app;
+if (express.version.charAt(0) == 2) {
+  app = express.createServer();
+  app.register('.html', whiskers);
+} else {
+  app = express();
+  app.engine('.html', whiskers.__express);
+}
 app.set('views', __dirname+'/templates');
 
 app.get('/', function(req, res){
-  res.render('index.html', {title: 'My Site', content: 'Welcome!'});
+  if (express.version.charAt(0) == 2) {
+    res.render('index.html', {title: 'My Site', content: 'Welcome!'});
+  } else {
+    res.render('newLayout.html', {
+      partials: {body: 'index.html'},
+      title: 'My Site',
+      content: 'Welcome!'
+    });
+  }
 });
 
 var expected = fs.readFileSync('test/server/rendered/express.html', 'utf8');
