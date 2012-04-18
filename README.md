@@ -137,8 +137,8 @@ is empty:
       <p>Nothing in the array!</p>
     {/for}
 
-A partial tag begins with a greater-than sign.  It is replaced by a
-sub-template at that spot in the template:
+A partial tag begins with a greater-than sign.  It renders any template
+assigned to that variable with the current context:
 
     <div>{>partial}</div>
 
