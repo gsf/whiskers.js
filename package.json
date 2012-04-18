@@ -12,8 +12,8 @@
   , "url" : "http://github.com/gsf/whiskers.js.git"
   }
 , "scripts" : 
-  { "pretest" : "node compile.js"
-  , "test" : "find test/server/test-*.js | xargs -n 1 -t node"
+  { "test" : "find test/server/test-*.js | xargs -n 1 -t node"
+  , "posttest" : "node compile.js"
   }
 , "devDependencies" :
   { "express": "git://github.com/visionmedia/express.git"
