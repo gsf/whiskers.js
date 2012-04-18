@@ -16,7 +16,7 @@
   , "posttest" : "node compile.js"
   }
 , "devDependencies" :
-  { "express": "git://github.com/visionmedia/express.git"
+  { "express": "3.x"
   , "uglify-js" : ">=1.1.1"
   }
 }
