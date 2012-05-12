@@ -12,7 +12,7 @@ fs.readFile('lib/whiskers.js', 'utf8', function(err, data) {
     var pkg = JSON.parse(data);
     code = '// whiskers.js templating library v'+pkg.version+'\n'+code+'\n';
     fs.writeFile('dist/whiskers.min.js', code, function() {
-      console.log('Minified version written to dist/whiskers.min.js. Test it out at\ntest/browser/index.html.');
+      console.log('Minified version written to dist/whiskers.min.js. Test it out at\n'+__dirname+'/test/browser/index.html.');
     });
   });
 });
