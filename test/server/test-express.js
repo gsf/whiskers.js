@@ -16,6 +16,11 @@ if (express.version.charAt(0) == 2) {
 } else {
   app = express();
   app.engine('.html', whiskers.__express);
+  // uncomment the following to enable caching of all templates
+  //app.use(function(req, res, next){
+  //  res.locals.cache = true;
+  //  next();
+  //});
 }
 app.set('views', __dirname+'/templates');
 
@@ -24,6 +29,8 @@ app.get('/', function(req, res){
     res.render('index.html', {title: 'My Site', content: 'Welcome!'});
   } else {
     res.render('newLayout.html', {
+      // uncomment to enable caching for this template
+      //cache: true, 
       partials: {body: 'index.html'},
       title: 'My Site',
       content: 'Welcome!'
