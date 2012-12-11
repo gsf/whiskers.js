@@ -31,9 +31,14 @@ app.get('/', function(req, res){
     res.render('newLayout.html', {
       // uncomment to enable caching for this template
       //cache: true, 
-      partials: {body: 'index.html'},
+      partials: {
+        body: 'index.html',
+        // test grabbing partials by full path
+        footer: __dirname+'/templates/footer.html'
+      },
       title: 'My Site',
-      content: 'Welcome!'
+      content: 'Welcome!',
+      author: 'Anton'
     });
   }
 });
