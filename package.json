@@ -1,23 +1,24 @@
-{ "name" : "whiskers"
-, "description" : "A mustachioed templating library"
-, "version" : "0.2.3"
-, "author" : "Gabriel Farrell <g@grrawr.com>"
-, "contributors" : 
-  [ "Ernesto Méndez <der@der-design.com>"
-  , "Thomas Hunter <me@thomashunter.name>"
-  ]
-, "engines" : { "node": ">=0.4.0" }
-, "main" : "lib/whiskers"
-, "repository" :
-  { "type" : "git"
-  , "url" : "http://github.com/gsf/whiskers.js.git"
-  }
-, "scripts" : 
-  { "test" : "find test/server/test-*.js | xargs -n 1 -t node"
-  , "posttest" : "node minify.js"
-  }
-, "devDependencies" :
-  { "express": "3.x"
-  , "uglify-js" : ">=1.1.1"
+{ 
+  "name": "whiskers", 
+  "description": "A mustachioed templating library", 
+  "version": "0.2.3", 
+  "author": "Gabriel Farrell <g@grrawr.com>", 
+  "contributors": [ 
+    "Ernesto Méndez <der@der-design.com>", 
+    "Thomas Hunter <me@thomashunter.name>"
+  ], 
+  "engines": {"node": ">=0.4.0"}, 
+  "main": "lib/whiskers", 
+  "repository": {
+    "type": "git", 
+    "url": "http://github.com/gsf/whiskers.js.git"
+  }, 
+  "scripts": {
+    "test": "find test/server/test-*.js | xargs -n 1 -t node", 
+    "posttest": "node minify.js"
+  }, 
+  "devDependencies": {
+    "express": "3.x", 
+    "uglify-js": ">=1.1.1"
   }
 }
