@@ -1,24 +1,26 @@
-{ 
-  "name": "whiskers", 
-  "description": "A mustachioed templating library", 
-  "version": "0.2.3", 
-  "author": "Gabriel Farrell <g@grrawr.com>", 
-  "contributors": [ 
-    "Ernesto Méndez <der@der-design.com>", 
+{
+  "name": "whiskers",
+  "description": "A mustachioed templating library",
+  "version": "0.2.4",
+  "author": "Gabriel Farrell <g@grrawr.com>",
+  "contributors": [
+    "Ernesto Méndez <der@der-design.com>",
     "Thomas Hunter <me@thomashunter.name>"
-  ], 
-  "engines": {"node": ">=0.4.0"}, 
-  "main": "lib/whiskers", 
+  ],
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "main": "lib/whiskers",
   "repository": {
-    "type": "git", 
+    "type": "git",
     "url": "http://github.com/gsf/whiskers.js.git"
-  }, 
+  },
   "scripts": {
-    "test": "find test/server/test-*.js | xargs -n 1 -t node", 
+    "test": "find test/server/test-*.js | xargs -n 1 -t node",
     "posttest": "node minify.js"
-  }, 
+  },
   "devDependencies": {
-    "express": "3.x", 
+    "express": "3.x",
     "uglify-js": ">=1.1.1"
   }
 }
