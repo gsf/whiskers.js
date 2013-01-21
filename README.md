@@ -20,7 +20,7 @@ Installation
 
 For the browser, drop the minified version at `dist/whiskers.min.js` in your
 scripts directory (or source it directly from GitHub at 
-<https://raw.github.com/gsf/whiskers.js/master/dist/whiskers.min.js>).
+<https://gsf.github.com/whiskers.js/whiskers.min.js>).
 
 For node, `npm install whiskers`.
 
