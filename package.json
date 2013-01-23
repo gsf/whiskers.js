@@ -5,7 +5,8 @@
   "author": "Gabriel Farrell <g@grrawr.com>",
   "contributors": [
     "Ernesto Méndez <der@der-design.com>",
-    "Thomas Hunter <me@thomashunter.name>"
+    "Thomas Hunter <me@thomashunter.name>",
+    "Ryan Lee <rlee@edits.net>"
   ],
   "engines": {
     "node": ">=0.4.0"
