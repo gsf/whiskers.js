@@ -22,6 +22,6 @@
   },
   "devDependencies": {
     "express": "3.x",
-    "uglify-js": ">=1.1.1"
+    "uglify-js": "1.3.4"
   }
 }
