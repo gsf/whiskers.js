@@ -1,13 +1,10 @@
-// test for express compliance
+// express example
 
 var express = require('express');
 var fs = require('fs');
 var http = require('http');
-var common = require('./common');
-var assert = common.assert;
-var whiskers = common.whiskers;
-
-common.expected = 1;
+var assert = require('assert');
+var whiskers = require('../../lib/whiskers');
 
 var app;
 if (express.version.charAt(0) == 2) {
@@ -22,19 +19,19 @@ if (express.version.charAt(0) == 2) {
   //  next();
   //});
 }
-app.set('views', __dirname+'/templates');
+app.set('views', __dirname+'/views');
 
 app.get('/', function(req, res){
   if (express.version.charAt(0) == 2) {
     res.render('index.html', {title: 'My Site', content: 'Welcome!'});
   } else {
-    res.render('newLayout.html', {
+    res.render('layout.html', {
       // uncomment to enable caching for this template
       //cache: true, 
       partials: {
         body: 'index.html',
         // test grabbing partials by full path
-        footer: __dirname+'/templates/footer.html'
+        footer: __dirname+'/views/footer.html'
       },
       title: 'My Site',
       content: 'Welcome!',
@@ -43,7 +40,7 @@ app.get('/', function(req, res){
   }
 });
 
-var expected = fs.readFileSync('test/server/rendered/express.html', 'utf8');
+var expected = fs.readFileSync(__dirname+'/rendered.html', 'utf8');
 
 app.listen(3000, function() {
   // once the express server is listening test it with a client
