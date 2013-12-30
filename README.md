@@ -24,9 +24,10 @@ scripts directory (or source it directly from GitHub at
 
 For node, `npm install whiskers`.
 
-For use in [Express][], see `test/server/test-express.js`.
+For use in [Express][], see [examples/express][exex].
 
 [express]: http://expressjs.com/
+[exex]: https://github.com/gsf/whiskers.js/tree/master/examples/express
 
 
 Tests
@@ -158,7 +159,7 @@ See the test directory for server and browser usage examples.
 Forebears
 ---------
 
-Whiskers is influenced by these fine projects:
+Whiskers was influenced by these fine projects:
 
 * <http://github.com/janl/mustache.js>
 * <http://github.com/akdubya/dustjs>
