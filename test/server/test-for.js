@@ -4,7 +4,7 @@ var common = require('./common');
 var assert = common.assert;
 var whiskers = common.whiskers;
 
-common.expected = 15;
+common.expected = 16;
 
 var template = '{for x in arr}{x}{/for}';
 
@@ -53,4 +53,9 @@ template = '{for x in arr}{x}{else}blah{/for}';
 assert.equal(whiskers.render(template, {}), 'blah');
 
 context = {arr:[1,2,3]};
+assert.equal(whiskers.render(template, context), '123');
+
+template = '{for x-y in foo-bar.arr-var}{x-y}{else}blah{/for}';
+
+context = {'foo-bar': {'arr-var': [1,2,3]}};
 assert.equal(whiskers.render(template, context), '123');
