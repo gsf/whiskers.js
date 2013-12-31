@@ -1,6 +1,6 @@
 // test "for" tag
 
-test('for', 16, function() {
+test('for', 18, function() {
   var template = '{for x in arr}{x}{/for}';
 
   equal(whiskers.render(template, {}), '');
@@ -52,6 +52,11 @@ test('for', 16, function() {
 
   template = '{for x-y in foo-bar.arr-var}{x-y}{else}blah{/for}';
 
+  equal(whiskers.render(template, {}), 'blah');
+
   context = {'foo-bar': {'arr-var': [1,2,3]}};
   equal(whiskers.render(template, context), '123');
+
+  // loop var used above shouldn't populate the general context #22
+  equal(context['x-y'], '');
 });

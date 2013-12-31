@@ -4,7 +4,7 @@ var common = require('./common');
 var assert = common.assert;
 var whiskers = common.whiskers;
 
-common.expected = 16;
+common.expected = 18;
 
 var template = '{for x in arr}{x}{/for}';
 
@@ -57,5 +57,10 @@ assert.equal(whiskers.render(template, context), '123');
 
 template = '{for x-y in foo-bar.arr-var}{x-y}{else}blah{/for}';
 
+assert.equal(whiskers.render(template, {}), 'blah');
+
 context = {'foo-bar': {'arr-var': [1,2,3]}};
 assert.equal(whiskers.render(template, context), '123');
+
+// loop var used above shouldn't populate the general context #22
+assert.equal(context['x-y'], '');
