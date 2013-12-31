@@ -1,7 +1,7 @@
 {
   "name": "whiskers",
   "description": "A mustachioed templating library",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Gabriel Farrell <g@grrawr.com>",
   "contributors": [
     "Ernesto Méndez <der@der-design.com>",
