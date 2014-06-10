@@ -15,6 +15,8 @@ assert.equal(render('{if foo}{foo}{else}blah{/if}', context), 'bar');
 assert.equal(render('{if not foo}blah{else}{foo}{/if}', context), 'bar');
 assert.equal(render('{for x in biz}{foo}{x}{else}blah{/for}', context), 'barbotbarbit');
 
+assert.equal(render('{foo|blah}', context), 'bar');
+assert.equal(render('{doo|baz blah:(}', context), 'baz blah:(');
 
 // stub out console.warn
 var temp = console.warn;

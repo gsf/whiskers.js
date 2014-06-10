@@ -10,6 +10,8 @@ test('logic', 19, function() {
   equal(whiskers.render('{if not foo}blah{else}{foo}{/if}', context), 'bar');
   equal(whiskers.render('{for x in biz}{foo}{x}{else}blah{/for}', context), 'barbotbarbit');
 
+  equal(whiskers.render('{foo|blah}', context), 'bar');
+  equal(whiskers.render('{baz|baz blah:(}', context), 'baz blah:(');
 
   // stub out console.warn
   var temp = console.warn;
