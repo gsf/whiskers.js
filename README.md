@@ -30,12 +30,12 @@ For use in [Express][], see [examples/express][exex].
 [exex]: https://github.com/gsf/whiskers.js/tree/master/examples/express
 
 
-Tests
------
+Tests and Dist
+---------------
 
 For the browser, visit `test/browser/index.html`.
 
-For node, `npm test`.
+For node, `npm test`. It produces minified copy of library to dist folder
 
 
 Example

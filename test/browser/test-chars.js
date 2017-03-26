@@ -1,6 +1,6 @@
 // test for troubling characters
 
-test('chars', 9, function() {
+test('chars', 11, function() {
   equal(whiskers.render('\\'), '\\');
   equal(whiskers.render('\''), '\'');
   equal(whiskers.render('\\\''), '\\\'');
@@ -13,4 +13,10 @@ test('chars', 9, function() {
   equal(whiskers.render('{@context}',
       {'@context': 'special tags in json-ld use at signs'}),
       'special tags in json-ld use at signs');
+  equal(whiskers.render('{dc:title}',
+      {'dc:title': 'special key in json-ld use compact IRI'}),
+      'special key in json-ld use compact IRI');
+  equal(whiskers.render('{dc:title.dc:topic}',
+      {'dc:title': {'dc:topic': 'special key in json-ld use compact IRI'}}),
+      'special key in json-ld use compact IRI');
 });
