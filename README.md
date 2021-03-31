@@ -1,6 +1,8 @@
 Whiskers.js
 ===========
 
+**Note** The library is not supported for long time. It's usage is not recommended in any publicly available application due to potential security issues.
+
 About
 -----
 
